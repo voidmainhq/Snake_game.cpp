@@ -1,0 +1,82 @@
+#include <iostream>
+#include<windows.h>
+#include<ctime>
+#include<cstdlib>
+using namespace std;
+int main()
+{
+srand(time(0));
+char grid[50];
+
+for (int x = 0; x < 50; x++) {
+grid[x] = ' ';
+}
+int a = rand() % 50;
+grid[a] = '@';
+cout << "how many walls do you want" << endl;
+int w = 0;
+cin >> w;
+int s = 0;
+while (s < w) {
+    int z = rand() % 50;
+    if (grid[z] == ' ' && grid[z - 1] != '#' && grid[z + 1] != '#') {
+        grid[z] = '#';
+        s++;
+    }
+}
+char snake = '~';
+int x = 0;
+do {
+x = rand() % 50;
+} while (grid[x] != ' ');
+grid[x] = snake;
+
+bool jump = false;
+while (x != a) {
+for (int i = 0; i <= 49; i++) {
+cout << grid[i];
+}
+if (GetAsyncKeyState(VK_SPACE)) {
+jump = true;
+}
+if (GetAsyncKeyState('A')) {
+if (jump == true && grid[(x + 50 - 2) % 50] != '#') {
+grid[x] = ' ';
+x = (x + 50 - 2) % 50;
+grid[x] = '~';
+jump = false;
+}
+else if (x == 0 && grid[49] != '#') {
+grid[x] = ' ';
+x = 49;
+grid[x] = snake;
+}
+else if (grid[x - 1] != '#') {
+grid[x] = ' ';
+x -= 1;
+grid[x] = snake;
+}
+}
+if (GetAsyncKeyState('D')) {
+if (jump == true && grid[(x + 2) % 50] != '#') {
+grid[x] = ' ';
+x = (x + 2) % 50;
+grid[x] = '~';
+jump = false;
+}
+else if (x == 49 && grid[0] != '#') {
+grid[x] = ' ';
+x = 0;
+grid[x] = snake;
+}
+else if (grid[x + 1] != '#') {
+grid[x] = ' ';
+x += 1;
+grid[x] = snake;
+
+}
+}
+Sleep(200);
+system("cls");
+}
+}

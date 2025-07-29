@@ -14,7 +14,7 @@ int main()
     }
     int a = rand() % 50;
     grid[a] = '@';
-    cout << "how many walls do you want" << endl;
+    cout << "how many walls do you want (Recommended 20 or lower)" << endl;
     int w = 0;
     cin >> w;
     int s = 0;
@@ -95,4 +95,5 @@ int main()
         Sleep(200);
         system("cls");
     }
+    cout<<"You win!"<<endl;
 }

@@ -1,19 +1,31 @@
-# C++ Snake Game (Terminal)
+# 🐍 Snake Terminal Game (C++)
 
-A simple Snake-style game built in C++ that runs in the terminal.
+A minimalist **Snake-style terminal game**, built in C++ for Windows. Navigate a 1D grid, avoid randomly placed walls, and reach the fruit (`@`) using real-time controls!
 
-# Features
-- Real-time movement with A/D keys
-- Jump over obstacles with Space
-- Random fruit and wall generation
-- Win by reaching the fruit (@)
+## 🎮 Features
 
-# How to Play
-1. Compile with any C++ compiler (Windows-only for now)
-3. Use `A` and `D` to move
-4. Press `Space` and another letter ('A' or 'D') to jump over walls
-5. Reach the fruit to win
+- Real-time keyboard input (A/D to move, SPACE + A/D to jump)
+- Randomized fruit and wall generation
+- Win condition when you reach the fruit
+- Simple jump mechanic over obstacles
+- Built entirely using `windows.h` and standard C++
 
-# Notes
-- Requires Windows (uses `windows.h`)
-- I will probably make a point system :)
+## 🧠 How to Play
+
+| Key      | Action                         |
+|----------|--------------------------------|
+| `A`      | Move left                      |
+| `D`      | Move right                     |
+| `SPACE` + A/D | Jump over wall in that direction |
+| `@`      | Fruit (goal)                   |
+| `#`      | Wall (obstacle)                |
+| `~`      | You (snake)                    |
+
+- Reach the `@` to win.
+- Avoid crashing into `#` unless you jump.
+- Game wraps around edges (left ↔ right).
+
+## 🖥️ Requirements
+
+- Windows machine
+- C++ compiler

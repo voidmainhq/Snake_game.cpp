@@ -1,6 +1,6 @@
 # Snake Terminal Game (C++)
 
-A simple snake game. Navigate a 1D grid, avoid randomly placed walls, and reach the fruit (`@`) using real-time controls!
+A simple snake game. Navigate a 1D grid, avoid randomly placed walls, and reach the fruit (`@`) using real-time controls
 
 ## Features
 
